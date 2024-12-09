@@ -1,0 +1,91 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.table-responsive {
+  max-height: 800px;
+  overflow-y: scroll;
+}
+
+.custom-header th{
+    background-color: #5d5db1 !important;
+    border-color: white;
+    font-weight:bold;
+    color: white; 
+}
+
+.add-btn {
+    background-color: #3517ef;
+    border-color: #3517ef;
+    font-weight:bold;
+    color: white; 
+}
+
+.add-btn:hover {
+    background-color: white;
+    border-color: #3517ef;
+    font-weight:bold;
+    color: #3517ef;
+}
+
+.search-btn{
+    background-color: #060114;
+    border-color: #060114;
+    font-weight:bold;
+    color: white;
+}
+
+.search-btn:hover{
+    background-color: white;
+    border-color: #060114;
+    font-weight:bold;
+    color: #060114;
+}
+
+.modify-btn{
+    background-color: #49f3b4;
+    border-color: #49f3b4;
+    font-weight:bold;
+    color: white;
+}
+
+.modify-btn:hover{
+    background-color: white;
+    border-color: #49f3b4;
+    font-weight:bold;
+    color: #49f3b4;
+}
+
+.view-btn{
+    background-color: #6eba9d;
+    border-color:#6eba9d;
+    font-weight:bold;
+    color: white;
+}
+
+.view-btn:hover{
+    background-color: white;
+    border-color: #6eba9d;
+    font-weight:bold;
+    color: #6eba9d;
+}
+
+.deactivate-btn{
+    background-color: #8C362F;
+    border-color:#8C362F;
+    font-weight:bold;
+    color: white;
+}
+
+.deactivate-btn:hover{
+    background-color: white;
+    border-color:#8C362F;
+    font-weight:bold;
+    color: #8C362F;
+}
+
+
+
+

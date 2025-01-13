@@ -1,14 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# wait-for-it.sh: espera a que un servicio esté disponible (en este caso, MySQL)
 
-host="$1"
-port="$2"
+HOST=$1
+PORT=$2
+shift 2
 
-echo "Comprobando conexión a $host en el puerto $port..."
+echo "Esperando que el servicio $HOST:$PORT esté disponible..."
 
-while ! echo > /dev/tcp/"$host"/"$port"; do
-  echo "Esperando MySQL en $host:$port..."
-  sleep 1
+# Esperar hasta que MySQL esté listo
+until nc -z -v -w30 $HOST $PORT; do
+  echo "Esperando MySQL..."
+  sleep 2
 done
 
-echo "MySQL disponible en $host:$port, ejecutando la aplicación."
-exec "${@:3}"
+echo "Servicio $HOST:$PORT está disponible, continuando con la ejecución."
+
+# Ejecutar el comando que sigue (en este caso, iniciar la aplicación)
+exec "$@"

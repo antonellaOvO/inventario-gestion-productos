@@ -4,7 +4,7 @@ services:
   # Servicio para la aplicación Spring Boot (Inventario)
   app_inventario:
     build:
-      context: Inventario/ # Ruta al directorio donde está tu proyecto Java
+      context: ./Inventario # Ruta al directorio donde está tu proyecto Java
     mem_limit: 512m
     ports:
       - "8080:8080" # Exponer el puerto 8080 para acceder a la app desde fuera del contenedor

@@ -1,13 +1,13 @@
-version: '3'
+version: "3"
 
 services:
   # Servicio para la aplicación Spring Boot (Inventario)
   app_inventario:
     build:
-      context: ./Inventario  # Ruta al directorio donde está tu proyecto Java
+      context: ./Inventario # Ruta al directorio donde está tu proyecto Java
     mem_limit: 512m
     ports:
-      - "8080:8080"  # Exponer el puerto 8080 para acceder a la app desde fuera del contenedor
+      - "8080:8080" # Exponer el puerto 8080 para acceder a la app desde fuera del contenedor
     environment:
       spring.datasource.url: jdbc:mysql://mysql:3306/inventario
       spring.datasource.username: root
@@ -15,19 +15,20 @@ services:
     restart: always
     depends_on:
       mysql:
-        condition: service_healthy    # Esperar a que MySQL esté listo antes de iniciar la app
+        condition: service_healthy # Esperar a que MySQL esté listo antes de iniciar la app
 
   # Servicio para la base de datos MySQL
   mysql:
-    image: mysql:8.0.33  # Usar la imagen de MySQL 8
+    image: mysql:8.0.33 # Usar la imagen de MySQL 8
     ports:
-      - "3307:3306"  # Exponer el puerto 3306 del contenedor como 3307 en tu máquina local
+      - "3307:3306" # Exponer el puerto 3306 del contenedor como 3307 en tu máquina local
     environment:
-      MYSQL_ROOT_PASSWORD: Conexionlocal1  # Contraseña del root en MySQL
-      MYSQL_DATABASE: inventario  # Nombre de la base de datos
+      MYSQL_ROOT_PASSWORD: Conexionlocal1 # Contraseña del root en MySQL
+      MYSQL_DATABASE: inventario # Nombre de la base de datos
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
       timeout: 10s
       retries: 10
 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Producto</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lexend+Tera:wght@100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Rakkas&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <h2 class="text-center mb-4">Detalles del Producto</h2>
+      <form class="card shadow-sm p-4">
+
+        <div class="row mb-3">
+          <label for="nombreProducto" class="col-sm-3 col-form-label">Nombre Producto</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="nombreProducto" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="categoria" class="col-sm-3 col-form-label">Categoría</label>
+          <div class="col-sm-9">
+            <select class="form-select" id="categoria"></select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="subcategoria" class="col-sm-3 col-form-label">Subcategoría</label>
+          <div class="col-sm-9">
+            <select class="form-select" id="subcategoria"></select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="descripcion" class="col-sm-3 col-form-label">Descripción</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" id="descripcion"></textarea>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="stock" class="col-sm-3 col-form-label">Stock</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" id="stock" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="precioUnidad" class="col-sm-3 col-form-label">Precio/unidad Sin Iva</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" id="precioUnidad" step="any" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="proveedor" class="col-sm-3 col-form-label">Proveedor</label>
+          <div class="col-sm-9">
+            <select class="form-select" id="proveedor"></select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="telefonoProveedor" class="col-sm-3 col-form-label">Teléfono Proveedor</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="telefonoProveedor" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="emailProveedor" class="col-sm-3 col-form-label">Email Proveedor</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="emailProveedor" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+        <label for="activo" class="col-sm-3 col-form-label">Activo</label>
+        <div class="col-sm-9">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="activo" />
+            <label class="form-check-label" for="activo">Activo</label>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="row mb-3">
+          <label for="fechaAdquisicion" class="col-sm-3 col-form-label">Fecha Adquisición</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="fechaAdquisicion" />
+          </div>
+        </div>
+        <div class="fs-6 fw-bold text-danger" id="error-fechaAdquisicion"></div>
+
+        <div class="row mb-3">
+          <label for="fechaCaducidad" class="col-sm-3 col-form-label">Fecha Caducidad</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="fechaCaducidad" />
+          </div>
+        </div>
+        <div class="fs-6 fw-bold text-danger" id="error-fechaCaducidad"></div>
+          
+        
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn add-btn my-3 guardar-btn">Guardar Producto</button>
+          <button type="submit" class="btn btn-danger my-3 mx-5" onclick="window.location.href='../index.html';">Cancelar</button>
+        </div>
+        
+        
+      </form>
+    </div>
+
+    <!-- Modales -->
+    <!-- Modal de Éxito para Modificación -->
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Edición Producto</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Producto modificado exitosamente.</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="window.location.href='../index.html';"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/edit-product.js"></script>
+  </body>
+</html>

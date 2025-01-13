@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/l
 COPY target/Inventario-1.0-SNAPSHOT.jar app_inventario.jar
 
 # Copiar el script de espera (wait-for-it.sh)
-COPY wait-for-it.sh /wait-for-it.sh
+COPY Inventario/wait-for-it.sh /wait-for-it.sh
 
 # Asegurarse de que el script tiene permisos de ejecución
 RUN chmod +x /wait-for-it.sh

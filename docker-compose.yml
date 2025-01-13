@@ -8,14 +8,13 @@ services:
     ports:
       - "8080:8080" # Exponer el puerto 8080 para acceder a la app desde fuera del contenedor
     environment:
-      spring.datasource.url: jdbc:mysql://localhost:3306/inventario # URL de conexión a MySQL usando localhost
-      spring.datasource.username: root # Usuario de MySQL
-      spring.datasource.password: Conexionlocal1 # Contraseña de MySQL
+      spring.datasource.url: jdbc:mysql://mysql:3306/inventario
+      spring.datasource.username: root
+      spring.datasource.password: Conexionlocal1
     restart: always
     depends_on:
       mysql:
         condition: service_healthy # Esperar a que MySQL esté listo antes de iniciar la app
-
   # Servicio para la base de datos MySQL
   mysql:
     image: mysql:8.0.33 # Usar la imagen de MySQL 8
@@ -28,10 +27,9 @@ services:
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
+      timeout: 10s
       retries: 10
-      timeout: 5s
-
-# Definición de los volúmenes para persistencia
+  # Definición de los volúmenes para persistencia
 volumes:
   mysql-data:
     driver: local

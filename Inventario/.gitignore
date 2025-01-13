@@ -17,15 +17,7 @@ HELP.md
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-# No ignorar la carpeta target
-!target/
 
 ### VS Code ###
 .vscode/

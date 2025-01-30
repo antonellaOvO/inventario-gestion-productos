@@ -16,7 +16,7 @@ Este sistema de inventario tiene las siguientes funcionalidades, las cuales se p
 
 ## ✓	Consultas de datos de Productos:
       o	Los usuarios pueden disponer de una vista de inventario en tiempo real y consultar los datos de un producto determinado como por ejemplo:
-## ✓	Mantener un control preciso del stock disponible en tiempo real.
+      o Mantener un control preciso del stock disponible en tiempo real.
 ## ✓	Cálculos sobre datos de Productos:
       o	Los usuarios pueden obtener cálculos sobre un producto determinado y gestionar precios e IVA para cada producto.
 ## ✓	Dar de baja a Productos:
